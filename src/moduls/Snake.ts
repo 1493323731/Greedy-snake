@@ -29,19 +29,18 @@ class Snake{
             throw new Error("蛇撞墙了");
         }
         //防止蛇掉头--该写法存在bug(蛇头位置发生错乱，第一截并不一定是蛇头)
-        if(this.snake[1]&&(this.snake[1] as HTMLElement).offsetLeft===value){
-            //当存在第二截时,如果第一截的坐标等于第二截,说明发生了掉头
-            //如果发生了掉头,让蛇反方向继续移动
+        // if(this.snake[1]&&(this.snake[1] as HTMLElement).offsetLeft===value){
+        //     当存在第二截时,如果第一截的坐标等于第二截,说明发生了掉头
+        //     如果发生了掉头,让蛇反方向继续移动
             
-            // if(value>this.X){
-            //     //如果新的value大于旧值X,说明蛇在向右走，应该使蛇继续向左走
-            //     value=this.X-10;
-            // }else{
-            //     //反之则说明蛇在向左走，应该使蛇继续向右走
-            //     value=this.X+10;
-            // }
-            alert("小心，掉头有可能会撞到自己噢");
-        }
+        //     if(value>this.X){
+        //         //如果新的value大于旧值X,说明蛇在向右走，应该使蛇继续向左走
+        //         value=this.X-10;
+        //     }else{
+        //         //反之则说明蛇在向左走，应该使蛇继续向右走
+        //         value=this.X+10;
+        //     }
+        // }
         //移动身体
         this.moveBody();
 
@@ -59,9 +58,9 @@ class Snake{
             throw new Error("蛇撞墙了");
         }
         //防止蛇掉头--该写法存在bug(蛇头位置发生错乱，第一截并不一定是蛇头)
-        if(this.snake[1]&&(this.snake[1] as HTMLElement).offsetTop===value){
-            // //当存在第二截时,如果第一截的坐标等于第二截,说明发生了掉头
-            // //如果发生了掉头,让蛇反方向继续移动
+        // if(this.snake[1]&&(this.snake[1] as HTMLElement).offsetTop===value){
+            //当存在第二截时,如果第一截的坐标等于第二截,说明发生了掉头
+            //如果发生了掉头,让蛇反方向继续移动
             
             // if(value>this.Y){
             //     //如果新的value大于旧值X,说明蛇在向右走，应该使蛇继续向左走
@@ -70,8 +69,7 @@ class Snake{
             //     //反之则说明蛇在向左走，应该使蛇继续向右走
             //     value=this.Y+10;
             // }
-            alert("小心，掉头会撞到自己噢");
-        }
+        // }
         //移动身体
         this.moveBody();
         
