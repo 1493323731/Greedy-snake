@@ -1,4 +1,73 @@
+//设置变量
+@bg-color:#fff;
+//清除默认样式
+*{
+    margin: 0;
+    padding: 0;
+    //改变盒子模型的计算方式
+    box-sizing: border-box;
+}
 body{
-    background-color: #bfa;
+    font:bold 20px "Courier"
+}
+//游戏主容器样式
+#main{
+    width: 360px;
+    height: 420px;
+    background: @bg-color;
+    margin: 100px auto;
+    border: 10px solid black;
+    border-radius: 40px;
+    //开启弹性盒模型
     display: flex;
+    //设置主轴方向
+    flex-flow: column;
+    //设置侧轴的对齐方式
+    align-items: center;
+    //设置主轴的对齐方式
+    justify-content: space-around;
+    //游戏舞台样式
+    #stage{
+        width: 304px;
+        height: 300px;
+        border: 2px solid black;
+        //开启相对定位
+        position: relative;
+        //设置蛇的样式
+        #snake{
+            div{
+                width: 10px;
+                height: 10px;
+                background-color: #000;
+                border: 1px solid @bg-color;
+                //开启绝对定位
+                position: absolute;
+            }
+        }
+        //设置食物的样式
+       #food{
+            width: 10px;
+            height: 10px;
+            //开启绝对定位
+            position: absolute;
+            left: 40px;
+            top: 100px;
+            display: flex;
+            flex-flow: row wrap;//横向排列，并自动换行
+            justify-content: space-between;
+            align-content: space-between;
+            div{
+                width: 4PX;
+                height: 4PX;
+                background-color: #000;
+            }
+        }
+    }
+    //游戏记分牌样式
+    #score-panel{
+        width: 300px;
+        display: flex;
+        //设置主轴对齐方式
+        justify-content: space-around;
+    }
 }

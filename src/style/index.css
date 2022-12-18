@@ -1,4 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  background-color: #bfa;
+  font: bold 20px "Courier";
+}
+#main {
+  width: 360px;
+  height: 420px;
+  background: #fff;
+  margin: 100px auto;
+  border: 10px solid black;
+  border-radius: 40px;
   display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#main #stage {
+  width: 304px;
+  height: 300px;
+  border: 2px solid black;
+  position: relative;
+}
+#main #stage #snake div {
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border: 1px solid #fff;
+  position: absolute;
+}
+#main #stage #food {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 40px;
+  top: 100px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+#main #stage #food div {
+  width: 4PX;
+  height: 4PX;
+  background-color: #000;
+}
+#main #score-panel {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
 }

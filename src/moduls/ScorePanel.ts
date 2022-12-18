@@ -1,0 +1,35 @@
+//定义记分牌类
+class ScorePanel{
+    //score和level用来记录分数和等级
+    score=0;
+    level=1;
+    //定义一个属性表示分数和等级所对应的元素
+    scoreEle:HTMLElement;
+    levelEle:HTMLElement;
+    //设置一个变量限制等级
+    maxLevel:number;
+    //设置一个变量表示每隔多少分升级一次
+    upScore:number;
+    constructor(maxLevel:number=10,upScore:number=10){
+        this.scoreEle=document.getElementById("score")!;
+        this.levelEle=document.getElementById("level")!;
+        this.maxLevel=maxLevel;
+        this.upScore=upScore;
+    }
+    //设置一个加分方法
+    addScore(){
+        this.scoreEle.innerHTML=++this.score+'';//+''的目的是拼串,innerHTML需要的是一个字符串
+        //判断是否需要提升等级
+        if(this.score%this.upScore===0){
+            this.levelUp();
+        }
+    }
+    //提升等级的方法
+    levelUp(){
+        if(this.level<this.maxLevel){
+            //最高等级为10级
+            this.levelEle.innerHTML=++this.level+'';
+        }
+    }
+}
+export default ScorePanel;
